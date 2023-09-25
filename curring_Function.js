@@ -31,4 +31,17 @@ function evaluate(opration) {
         }
     }
 }
-console.log(evaluate("mul")(3)(7));
+// console.log(evaluate("mul")(3)(7));
+
+const mul1 = evaluate("mul")
+console.log(mul1(3)(7));
+
+function sumN(a) {
+    return function (b) {
+        if (b) return sumN(a + b)
+        else return a
+    }
+
+}
+
+console.log(sumN(2)(3)(5)())
