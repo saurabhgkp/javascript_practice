@@ -17,4 +17,18 @@ function triple(a) {
         }
     }
 }
-console.log(triple(2)(3)(7));
+// console.log(triple(2)(3)(7));
+function evaluate(opration) {
+    return function (a) {
+        return function (b) {
+            switch (opration) {
+                case "sum": return a + b
+                case "mul": return a * b
+                case "divi": return a / b
+                case "sub": return a - b
+
+            }
+        }
+    }
+}
+console.log(evaluate("mul")(3)(7));
